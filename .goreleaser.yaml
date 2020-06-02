@@ -29,7 +29,7 @@ dockers:
   - image_templates:
       - "docker.io/danielpacak/trivy-action-test-drive:{{ .Version }}"
     binaries:
-      - scanner-trivy
+      - test-drive
     build_flag_templates:
       - "--label=org.label-schema.schema-version=1.0"
       - "--label=org.label-schema.name={{ .ProjectName }}"
