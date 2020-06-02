@@ -25,3 +25,7 @@ jobs:
         uses: goreleaser/goreleaser-action@v1
         with:
           args: release --snapshot --skip-publish --rm-dist
+      - name: Trivy Vulnerability Scanner
+        uses: danielpacak/trivy-action@0.0.1
+        with:
+          image-ref: docker.io/danielpacak/trivy-action-test-drive:${{ github.sha }}
