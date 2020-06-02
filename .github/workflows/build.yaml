@@ -26,6 +26,8 @@ jobs:
         with:
           args: release --snapshot --skip-publish --rm-dist
       - name: Trivy Vulnerability Scanner
-        uses: danielpacak/trivy-action@0.0.1
+        uses: danielpacak/trivy-action@0.0.3
         with:
-          image-ref: docker.io/danielpacak/trivy-action-test-drive:${{ github.sha }}
+          format: 'json'
+          exit-code: '0'
+          image-ref: 'docker.io/danielpacak/trivy-action-test-drive:${{ github.sha }}'
