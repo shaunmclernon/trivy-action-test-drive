@@ -24,8 +24,13 @@ jobs:
       - name: Build an image from Dockerfile
         run: |
           make docker-build IMAGE_TAG=${{ github.sha }}
+      - name: Cache Trivy
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/trivy
+          key: cache-trivy
       - name: Run vulnerability scanner
-        uses: aquasecurity/trivy-action@0.0.4
+        uses: aquasecurity/trivy-action@0.0.6
         with:
           format: 'table'
           exit-code: '0'
