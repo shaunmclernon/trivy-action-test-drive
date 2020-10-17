@@ -1,7 +1,7 @@
 SOURCES := $(shell find . -name '*.go')
 BINARY := test-drive
 IMAGE_TAG := dev
-IMAGE := danielpacak/trivy-action-test-drive:$(IMAGE_TAG)
+IMAGE := smclernon/trivy-action-test-drive:$(IMAGE_TAG)
 
 build: $(BINARY)
 

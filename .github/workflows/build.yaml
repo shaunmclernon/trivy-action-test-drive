@@ -25,8 +25,8 @@ jobs:
         run: |
           make docker-build IMAGE_TAG=${{ github.sha }}
       - name: Run vulnerability scanner
-        uses: aquasecurity/trivy-action@0.0.4
+        uses: aquasecurity/trivy-action@0.0.8
         with:
           format: 'table'
           exit-code: '0'
-          image-ref: 'docker.io/danielpacak/trivy-action-test-drive:${{ github.sha }}'
+          image-ref: 'docker.io/smclernon/trivy-action-test-drive:${{ github.sha }}'
